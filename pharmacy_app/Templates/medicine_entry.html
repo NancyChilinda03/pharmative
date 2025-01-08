@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Entry</title>
+    <link rel="stylesheet" href="/static/medicine_entry.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Enter New Medicine</h1>
+        </header>
+        <main>
+            <form method="POST" action="{% url 'medicine_entry' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Save</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>

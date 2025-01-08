@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharmatrack</title>
+    <link rel="stylesheet" href="/static/homepage.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            PHARMATIVE
+        </div>
+        <div class="content">
+            <a href="{% url 'homepage' %}" class="nav-link">Home</a>
+            <a href="{% url 'login' %}" class="nav-link">Store</a>
+            <a href="{% url 'medicines_list' %}" class="nav-link">medicine</a>
+        
+        </div>
+        <div class="footer">
+            <p>Pharmatrack Opens 24 Hours</p>
+            <a href="login" class="footer-link">SHOP NOW</a>
+            <p>Free Delivery: New Medicine Everyday: Medicines Guaranteed</p>
+        </div>
+    </div>
+</body>
+</html>

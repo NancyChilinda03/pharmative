@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppliers</title>
+    <link rel="stylesheet" href="/static/form_styles.css">
+</head>
+<body>
+    <h2>Available Suppliers</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Contact Info</th>
+        </tr>
+        {% for supplier in suppliers %}
+        <tr>
+            <td>{{ supplier.name }}</td>
+            <td>{{ supplier.contact_info }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'pharmacist_dashboard' %}">EXIT</a>
+</body>
+</html>

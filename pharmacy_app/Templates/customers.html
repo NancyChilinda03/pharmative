@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Customers</title>
+    <link rel="stylesheet" href="/static/view_customers.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Customers List</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for customer in customers %}
+                    <tr>
+                        <td data-label="First Name">{{ customer.first_name }}</td>
+                        <td data-label="Last Name">{{ customer.last_name }}</td>
+                        <td data-label="Username">{{ customer.username }}</td>
+                        <td data-label="Email">{{ customer.email }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

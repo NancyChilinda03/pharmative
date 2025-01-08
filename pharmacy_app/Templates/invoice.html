@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Invoice</title>
+</head>
+<body>
+    <h2>Invoice</h2>
+
+
+{% extends 'base_generic.html' %}
+
+{% block content %}
+<h1>Checkout</h1>
+<p>Customer: {{ customer.user.username }}</p>
+<ul>
+    {% for order in orders %}
+    <li>{{ order.medicine.name }} - {{ order.quantity }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'payment' %}">Proceed to Payment</a>
+{% endblock %}
+</body>
+</html>

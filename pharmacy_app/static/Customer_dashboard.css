@@ -1,0 +1,176 @@
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background: red;
+    color: #ecf0f1;
+    padding-top: 20px;
+}
+
+.sidebar .profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar .profile img {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.sidebar h2 {
+    color: #ecf0f1;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    text-align: left;
+}
+
+.sidebar ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    background: #ffffff;
+    color: #000000; 
+}
+
+.sidebar ul .dropdown-content {
+    display: none;
+    padding-left: 20px;
+}
+
+.sidebar ul .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.main {
+    flex: 1;
+    background: #ecf0f1;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: red;
+    color: #ecf0f1;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.search-box {
+    position: relative;
+}
+
+.search-box input {
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+}
+
+.search-box button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.search-box button i {
+    color: green;
+}
+
+.statistics {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background: #fff;
+    padding: 20px;
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.stat-box h3 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.stat-box p {
+    margin: 5px 0 0;
+    color: #7f8c8d;
+}
+
+.report {
+    margin-bottom: 20px;
+}
+
+.report h2 {
+    margin: 0 0 20px;
+}
+
+.report-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.report-box p {
+    margin: 0;
+}
+
+.report-box .value {
+    font-size: 1.5em;
+}
+
+.report-box .value.positive {
+    color: #27ae60;
+}
+
+.report-box .value.negative {
+    color: #c0392b;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.action-box {
+    background: #fff;
+    padding: 20px;
+    flex: 1;
+    margin: 0 10px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.action-box:hover {
+    background: #bdc3c7;
+}

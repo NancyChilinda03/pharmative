@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medicines List</title>
+    <link rel="stylesheet" href="/static/view_customers.css">
+</head>
+<body>
+    <h2>Available Medicines</h2>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>DESCRIPTION</th>
+                    <th>QUANTITY</th>
+                    <th>SALE PRICE</th>
+                    <th>ADD TO CART</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for medicine in medicines %}
+                <tr>
+                    <td data-label="NAME">{{ medicine.name }}</td>
+                    <td data-label="DESCRIPTION">{{ medicine.description }}</td>
+                    <td data-label="QUANTITY">{{ medicine.quantity }}</td>
+                    <td data-label="SALE PRICE">{{ medicine.price }}</td>
+                    <td data-label="ADD TO CART">
+                        <a href="{% url 'add_to_cart' medicine.id %}">Add to Cart</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

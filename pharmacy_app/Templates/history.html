@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>order history</title>
+    <link rel="stylesheet" href="/static/view_customers.css">
+</head>
+<body>
+    <h1>{{ customer.user.username }}, here is what you have ordered so far</h1>
+    <h2>Your Orders</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Date Ordered</th>
+                <th>Complete/Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.date_ordered }}</td>
+                <td>{{ order.complete }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+</body>
+</html>
+

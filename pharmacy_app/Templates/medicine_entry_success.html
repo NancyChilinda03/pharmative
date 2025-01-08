@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Entry Success</title>
+    <link rel="stylesheet" href="/static/medicine_entry.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Medicine Entry Successful</h1>
+        </header>
+        <main>
+            <p>The medicine has been successfully entered into the database.</p>
+            <a href="{% url 'medicine_entry' %}">Enter another medicine</a>
+            <a href="{% url 'pharmacist_dashboard' %}">Back to Dashboard</a>
+        </main>
+    </div>
+</body>
+</html>

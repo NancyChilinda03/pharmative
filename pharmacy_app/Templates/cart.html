@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Orders and Order Items for {{ customer.name }}</title>
+        <link rel="stylesheet" href="/static/view_customers.css">
+    </head>
+    <body>
+        <h1>{{ customer.user.username }}'s CART</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Date Ordered</th>
+                    <th>Complete</th>
+                    <th>Transaction ID</th>
+                    <th>Order Items</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.date_ordered }}</td>
+                    <td>{{ order.complete }}</td>
+                    <td>{{ order.transaction_id }}</td>
+                    <td>
+                        <ul>
+                            {% for item in order_items %}
+                                {% if item.order.id == order.id %}
+                                <li>{{ item.medicine.name }} (Quantity: {{ item.quantity }})</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'checkout' %}">Proceed to Checkout</a>
+    </body>
+    </html>
+    
+    
+
+
+    

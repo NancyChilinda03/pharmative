@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medicines List</title>
+    <link rel="stylesheet" href="/static/view_customers.css">
+</head>
+<body>
+    <h2>Available Medicines</h2>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>DESCRIPTION</th>
+                    <th>QUANTITY</th>
+                    <th>PRICE</th>
+                    <th>MINIMUM_QUANTITY</th>
+                    <th>EXPIRY_DATE</th>
+                    <th>SUPPLIER</th>
+                    <th>DELETE</th>
+                    <th>ADD NEW MEDICINE</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for medicine in medicines %}
+                <tr>
+                    <td data-label="NAME">{{ medicine.name }}</td>
+                    <td data-label="DESCRIPTION">{{ medicine.description }}</td>
+                    <td data-label="QUANTITY">{{ medicine.quantity }}</td>
+                    <td data-label="SALE PRICE">{{ medicine.price }}</td>
+                    <td data-label="MINIMUM_QUANTITY">{{ medicine.minimum_quantity }}</td>
+                    <td data-label="EXPIRY_DATE">{{ medicine.expiry_date }}</td>
+                    <td data-label="SUPPLIER">{{ medicine.supplier }}</td>
+                    <td data-label="DELETE"><a href="{% url 'delete_medicine' medicine.id %}">delete medicine</a></td>
+                    <td data-label="ADD NEW MEDICINE">
+                        <a href="{% url 'medicine_entry' %}">add new medicine</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

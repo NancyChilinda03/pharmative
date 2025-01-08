@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manger-D</title>
+    <link rel="stylesheet" href="/static/pharmacist_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>MANAGER</h2>
+        <ul>
+            <li><a href="{% url 'homepage' %}"><i class="fas fa-home"></i> HOME</a></li>
+            <li class="dropdown">
+                <a href="#"><i class="fas fa-user"></i> CUSTOMERS</a>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href="{% url 'register' %}">New Customer</a></li>
+                        <li><a href="{% url 'customers' %}">Customers</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#"><i class="fas fa-pills"></i> MEDICINE</a>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href="{% url 'medicine_entry' %}">New Medicine</a></li>
+                        <li><a href="{% url 'medicine_update' %}">Update Medicine</a></li>
+                        <li><a href="{% url 'register' %}">Purchases</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#"><i class="fas fa-truck"></i> SUPPLIER</a>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href="{% url 'add_supplier' %}">New Supplier</a></li>
+                        <li><a href="update_supplier.html">Update Supplier</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#"><i class="fas fa-note"></i>REPORTS</a>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href="Profit_Report.html">Profit Report</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <header>
+            <h1>Dashboard</h1>
+            <div class="search-box">
+                <form action="#" method="GET">
+                    <input type="text" name="q" placeholder="Search...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <div class="settings">
+                <i class="fas fa-cog"></i>
+            </div>
+        </header>
+        <section class="statistics">
+            <div class="stat-box">
+                <h3>5</h3>
+                <p>Total Customer</p>
+            </div>
+            <div class="stat-box">
+                <h3>16</h3>
+                <p>Total Supplier</p>
+            </div>
+            <div class="stat-box">
+                <h3>4</h3>
+                <p>Total Medicine</p>
+            </div>
+            <div class="stat-box">
+                <h3>{{ out_of_stock_count }}</h3>
+                <p>Out of Stock</p>
+            </div>
+            <div class="stat-box">
+                <h3>{{ expired_count }}</h3>
+                <p>Expired</p>
+            </div>
+        </section>
+        <section class="report">
+            <h2>Today's Report</h2>
+            <div class="report-box">
+                <p>Day Sales</p>
+                <p class="value positive">MWK. 50100</p>
+            </div>
+            <div class="report-box">
+                <p>Monthly Sales</p>
+                <p class="value negative">MWK.50100</p>
+            </div>
+        </section>
+        </section>
+    </main>
+</body>
+</html>

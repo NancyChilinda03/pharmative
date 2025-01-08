@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        {% if error_message %}
+            <p class="error">{{ error_message }}</p>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <p><a href="#">Forgot your password?</a></p>
+            <button type="submit">Login</button>
+            <p>Don't have an account? <a href="{% url 'register' %}">Sign up</a></p>
+        </form>
+    </div>
+</body>
+</html>

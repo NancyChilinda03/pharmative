@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="/static/Customer_dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="profile">
+                <img src="/static/profile.png" alt="Profile Image">
+                <h1>....Customer_dashboard....</h1>
+                <h2>Welcome back!, {{ customer.user.username }}</h2>
+            </div>
+            <ul>
+                <li><a href="{% url 'homepage' %}"><i class="fas fa-home"></i> Home</a></li>
+                <li class="dropdown">
+                    <a href="{% url 'customer_profile' %}"><i class="fas fa-user"></i> Account</a>
+                </li>
+                <li class="dropdown">
+                    <a href="{% url 'medicines_list' %}"><i class="fas fa-pills"></i> Medicine</a>
+                </li>
+                <li class="dropdown">
+                    
+                    <a href="#"><i class="fas fa-shopping-cart"></i> Cart</a>
+                    <ul class="dropdown-content">
+                        <li><a href="{% url 'cart' customer_id %}">Purchases</a></li>
+                        {% for item in cart_items %}
+                        <li><a href="{% url 'remove_from_cart' item_id %}">Delete Order</a></li>
+                        {% endfor %}
+                        <li><a href="{% url 'checkout' %}">Pay Order</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'history' %}">order history</a></li>
+                <li><a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+        <main>
+            <header>
+                <h1>Dashboard</h1>
+                <div class="search-box">
+                    <form action="#" method="GET">
+                        <input type="text" name="q" placeholder="Search...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="settings">
+                    <i class="fas fa-cog"></i>
+                </div>
+            </header>
+            
+        </main>
+    </div>
+</body>
+</html>
